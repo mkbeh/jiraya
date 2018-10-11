@@ -24,6 +24,7 @@ class Parser(object):
 
         self.today = datetime.today().strftime('%d-%m-%Y').zfill(2)
         self.yesterday = (datetime.today() - timedelta(1)).strftime('%d-%m-%Y').zfill(2)
+        self.before_yesterday = (datetime.today() - timedelta(2)).strftime('%d-%m-%Y').zfill(2)
 
     @staticmethod
     def get_html(url, page_num):
@@ -69,6 +70,9 @@ class Parser(object):
 
         if not self.last_new:
             self.last_new = self.mongo.find({'date': self.yesterday}, 'news')
+
+            if not self.last_new:
+                self.last_new = self.mongo.find({'date': self.before_yesterday}, 'news')
 
     def parse(self, page_num):
         """
