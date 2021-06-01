@@ -10,7 +10,7 @@ PySocks==1.6.8
 requests==2.19.1
 stem==1.6.0
 torrequest==0.1.0
-urllib3==1.23
+urllib3==1.26.5
 beautifulsoup4==4.6.3
 bs4==0.0.1
 bson==0.5.6
@@ -26,4 +26,4 @@ requests==2.19.1
 six==1.11.0
 stem==1.6.0
 torrequest==0.1.0
-urllib3==1.23
+urllib3==1.26.5
